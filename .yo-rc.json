@@ -1,0 +1,35 @@
+{
+    "generator-jhipster": {
+        "promptValues": {
+            "packageName": "com.fhery021.hrdata"
+        },
+        "jhipsterVersion": "5.8.2",
+        "applicationType": "monolith",
+        "baseName": "HRData",
+        "packageName": "com.fhery021.hrdata",
+        "packageFolder": "com/fhery021/hrdata",
+        "serverPort": "8080",
+        "authenticationType": "jwt",
+        "cacheProvider": "ehcache",
+        "enableHibernateCache": true,
+        "websocket": false,
+        "databaseType": "sql",
+        "devDatabaseType": "mysql",
+        "prodDatabaseType": "mysql",
+        "searchEngine": false,
+        "messageBroker": false,
+        "serviceDiscoveryType": "eureka",
+        "buildTool": "maven",
+        "enableSwaggerCodegen": false,
+        "jwtSecretKey": "OTU5ODdkMTczNDRiOGQzZjNiMDNiNzdkM2NiNDdkYzg4NWRhMTNmNTg1MjkyM2RjNjkyZTZhYzFmNmZlODJhODRhMjcxMTA4OTM3MTRkMmJhNmMxZGYxOGZiYzU1YTQyODhhNDEwMjBmOWRjMjE2ZGU0YmFkNWQwNTFkZmUzYTk=",
+        "clientFramework": "angularX",
+        "useSass": true,
+        "clientPackageManager": "npm",
+        "testFrameworks": [],
+        "jhiPrefix": "jhi",
+        "entitySuffix": "",
+        "dtoSuffix": "DTO",
+        "otherModules": [],
+        "enableTranslation": false
+    }
+}
