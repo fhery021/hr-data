@@ -1,0 +1,51 @@
+<div class="row justify-content-center">
+    <div class="col-8">
+        <div *ngIf="companyPerson">
+            <h2><span>Company Person</span> {{companyPerson.id}}</h2>
+            <hr>
+            <jhi-alert-error></jhi-alert-error>
+            <dl class="row-md jh-entity-details">
+                <dt><span>First Name</span></dt>
+                <dd>
+                    <span>{{companyPerson.firstName}}</span>
+                </dd>
+                <dt><span>Last Name</span></dt>
+                <dd>
+                    <span>{{companyPerson.lastName}}</span>
+                </dd>
+                <dt><span>Email</span></dt>
+                <dd>
+                    <span>{{companyPerson.email}}</span>
+                </dd>
+                <dt><span>Mobile</span></dt>
+                <dd>
+                    <span>{{companyPerson.mobile}}</span>
+                </dd>
+                <dt><span>Company Name</span></dt>
+                <dd>
+                    <span>{{companyPerson.companyName}}</span>
+                </dd>
+                <dt><span>Title</span></dt>
+                <dd>
+                    <span>{{companyPerson.title}}</span>
+                </dd>
+                <dt><span>Nr Employees</span></dt>
+                <dd>
+                    <span>{{companyPerson.nrEmployees}}</span>
+                </dd>
+            </dl>
+
+            <button type="submit"
+                    (click)="previousState()"
+                    class="btn btn-info">
+                <fa-icon [icon]="'arrow-left'"></fa-icon>&nbsp;<span> Back</span>
+            </button>
+
+            <button type="button"
+                    [routerLink]="['/company-person', companyPerson.id, 'edit']"
+                    class="btn btn-primary">
+                <fa-icon [icon]="'pencil-alt'"></fa-icon>&nbsp;<span> Edit</span>
+            </button>
+        </div>
+    </div>
+</div>

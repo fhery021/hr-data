@@ -1,0 +1,49 @@
+<div class="row justify-content-center">
+    <div class="col-8">
+        <form name="editForm" role="form" novalidate (ngSubmit)="save()" #editForm="ngForm">
+            <h2 id="jhi-candidate-heading">Create or edit a Candidate</h2>
+            <div>
+                <jhi-alert-error></jhi-alert-error>
+                <div class="form-group" [hidden]="!candidate.id">
+                    <label for="id">ID</label>
+                    <input type="text" class="form-control" id="id" name="id"
+                        [(ngModel)]="candidate.id" readonly />
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" for="field_firstName">First Name</label>
+                    <input type="text" class="form-control" name="firstName" id="field_firstName"
+                        [(ngModel)]="candidate.firstName" />
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" for="field_lastName">Last Name</label>
+                    <input type="text" class="form-control" name="lastName" id="field_lastName"
+                        [(ngModel)]="candidate.lastName" />
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" for="field_email">Email</label>
+                    <input type="text" class="form-control" name="email" id="field_email"
+                        [(ngModel)]="candidate.email" />
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" for="field_mobile">Mobile</label>
+                    <input type="text" class="form-control" name="mobile" id="field_mobile"
+                        [(ngModel)]="candidate.mobile" />
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" for="field_companyName">Company Name</label>
+                    <input type="text" class="form-control" name="companyName" id="field_companyName"
+                        [(ngModel)]="candidate.companyName" />
+                </div>
+
+            </div>
+            <div>
+                <button type="button" id="cancel-save" class="btn btn-secondary"  (click)="previousState()">
+                    <fa-icon [icon]="'ban'"></fa-icon>&nbsp;<span>Cancel</span>
+                </button>
+                <button type="submit" id="save-entity" [disabled]="editForm.form.invalid || isSaving" class="btn btn-primary">
+                    <fa-icon [icon]="'save'"></fa-icon>&nbsp;<span>Save</span>
+                </button>
+            </div>
+        </form>
+    </div>
+</div>

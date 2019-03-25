@@ -1,0 +1,26 @@
+{
+    "name": "JobLink",
+    "fields": [
+        {
+            "fieldName": "link",
+            "fieldType": "String"
+        }
+    ],
+    "relationships": [
+        {
+            "relationshipType": "one-to-many",
+            "otherEntityName": "job",
+            "otherEntityRelationshipName": "jobLink",
+            "relationshipName": "job"
+        }
+    ],
+    "changelogDate": "20190325100116",
+    "entityTableName": "job_link",
+    "dto": "no",
+    "pagination": "no",
+    "service": "no",
+    "jpaMetamodelFiltering": false,
+    "fluentMethods": true,
+    "clientRootFolder": "",
+    "applications": "*"
+}

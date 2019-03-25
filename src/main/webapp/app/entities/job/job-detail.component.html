@@ -1,0 +1,51 @@
+<div class="row justify-content-center">
+    <div class="col-8">
+        <div *ngIf="job">
+            <h2><span>Job</span> {{job.id}}</h2>
+            <hr>
+            <jhi-alert-error></jhi-alert-error>
+            <dl class="row-md jh-entity-details">
+                <dt><span>Title</span></dt>
+                <dd>
+                    <span>{{job.title}}</span>
+                </dd>
+                <dt><span>Location</span></dt>
+                <dd>
+                    <span>{{job.location}}</span>
+                </dd>
+                <dt><span>Start Date</span></dt>
+                <dd>
+                    <span>{{job.startDate}}</span>
+                </dd>
+                <dt><span>Description</span></dt>
+                <dd>
+                    <span>{{job.description}}</span>
+                </dd>
+                <dt><span>Company Person</span></dt>
+                <dd>
+                    <div *ngIf="job.companyPerson">
+                        <a [routerLink]="['/company-person', job.companyPerson?.id, 'view']">{{job.companyPerson?.id}}</a>
+                    </div>
+                </dd>
+                <dt><span>Job Link</span></dt>
+                <dd>
+                    <div *ngIf="job.jobLink">
+                        <a [routerLink]="['/job-link', job.jobLink?.id, 'view']">{{job.jobLink?.id}}</a>
+                    </div>
+                </dd>
+            </dl>
+
+            <button type="submit"
+                    (click)="previousState()"
+                    class="btn btn-info">
+                <fa-icon [icon]="'arrow-left'"></fa-icon>&nbsp;<span> Back</span>
+            </button>
+
+            <button type="button"
+                    [routerLink]="['/job', job.id, 'edit']"
+                    class="btn btn-primary">
+                <fa-icon [icon]="'pencil-alt'"></fa-icon>&nbsp;<span> Edit</span>
+            </button>
+        </div>
+    </div>
+</div>

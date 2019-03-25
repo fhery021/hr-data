@@ -1,0 +1,81 @@
+<div class="row justify-content-center">
+    <div class="col-8">
+        <form name="editForm" role="form" novalidate (ngSubmit)="save()" #editForm="ngForm">
+            <h2 id="jhi-job-application-heading">Create or edit a Job Application</h2>
+            <div>
+                <jhi-alert-error></jhi-alert-error>
+                <div class="form-group" [hidden]="!jobApplication.id">
+                    <label for="id">ID</label>
+                    <input type="text" class="form-control" id="id" name="id"
+                        [(ngModel)]="jobApplication.id" readonly />
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" for="field_firstName">First Name</label>
+                    <input type="text" class="form-control" name="firstName" id="field_firstName"
+                        [(ngModel)]="jobApplication.firstName" />
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" for="field_lastName">Last Name</label>
+                    <input type="text" class="form-control" name="lastName" id="field_lastName"
+                        [(ngModel)]="jobApplication.lastName" />
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" for="field_email">Email</label>
+                    <input type="text" class="form-control" name="email" id="field_email"
+                        [(ngModel)]="jobApplication.email" />
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" for="field_phone">Phone</label>
+                    <input type="text" class="form-control" name="phone" id="field_phone"
+                        [(ngModel)]="jobApplication.phone" />
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" for="field_address">Address</label>
+                    <input type="text" class="form-control" name="address" id="field_address"
+                        [(ngModel)]="jobApplication.address" />
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" for="field_attachment">Attachment</label>
+                    <div>
+                        <div *ngIf="jobApplication.attachment" class="form-text text-danger clearfix">
+                            <a class="pull-left" (click)="openFile(jobApplication.attachmentContentType, jobApplication.attachment)">open</a><br>
+                            <span class="pull-left">{{jobApplication.attachmentContentType}}, {{byteSize(jobApplication.attachment)}}</span>
+                            <button type="button" (click)="jobApplication.attachment=null;jobApplication.attachmentContentType=null;"
+                                    class="btn btn-secondary btn-xs pull-right">
+                                <fa-icon [icon]="'times'"></fa-icon>
+                            </button>
+                        </div>
+                        <input type="file" id="file_attachment" (change)="setFileData($event, jobApplication, 'attachment', false)"/>
+                    </div>
+                    <input type="hidden" class="form-control" name="attachment" id="field_attachment"
+                        [(ngModel)]="jobApplication.attachment" />
+                    <input type="hidden" class="form-control" name="attachmentContentType" id="field_attachmentContentType"
+                        [(ngModel)]="jobApplication.attachmentContentType" />
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" for="field_candidate">Candidate</label>
+                    <select class="form-control" id="field_candidate" name="candidate" [(ngModel)]="jobApplication.candidate" >
+                        <option [ngValue]="null"></option>
+                        <option [ngValue]="candidateOption.id === jobApplication.candidate?.id ? jobApplication.candidate : candidateOption" *ngFor="let candidateOption of candidates; trackBy: trackCandidateById">{{candidateOption.id}}</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" for="field_job">Job</label>
+                    <select class="form-control" id="field_job" name="job" [(ngModel)]="jobApplication.job">
+                        <option [ngValue]="null"></option>
+                        <option [ngValue]="jobOption.id === jobApplication.job?.id ? jobApplication.job : jobOption" *ngFor="let jobOption of jobs; trackBy: trackJobById">{{jobOption.id}}</option>
+                    </select>
+                </div>
+            </div>
+            <div>
+                <button type="button" id="cancel-save" class="btn btn-secondary"  (click)="previousState()">
+                    <fa-icon [icon]="'ban'"></fa-icon>&nbsp;<span>Cancel</span>
+                </button>
+                <button type="submit" id="save-entity" [disabled]="editForm.form.invalid || isSaving" class="btn btn-primary">
+                    <fa-icon [icon]="'save'"></fa-icon>&nbsp;<span>Save</span>
+                </button>
+            </div>
+        </form>
+    </div>
+</div>
