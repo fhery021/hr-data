@@ -14,7 +14,7 @@ import { NotificationInterceptor } from './blocks/interceptor/notification.inter
 import { HrDataSharedModule } from 'app/shared';
 import { HrDataCoreModule } from 'app/core';
 import { HrDataAppRoutingModule } from './app-routing.module';
-import { HrDataHomeModule } from './home/home.module';
+import { HrDataDashboardModule } from './dashboard/dashboard.module';
 import { HrDataAccountModule } from './account/account.module';
 import { HrDataEntityModule } from './entities/entity.module';
 import * as moment from 'moment';
@@ -32,7 +32,7 @@ import { JhiMainComponent, NavbarComponent, FooterComponent, PageRibbonComponent
         }),
         HrDataSharedModule.forRoot(),
         HrDataCoreModule,
-        HrDataHomeModule,
+        HrDataDashboardModule,
         HrDataAccountModule,
         // jhipster-needle-angular-add-module JHipster will add new module here
         HrDataEntityModule,

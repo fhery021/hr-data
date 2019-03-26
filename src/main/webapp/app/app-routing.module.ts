@@ -1,23 +1,19 @@
 import { NgModule } from '@angular/core';
-import { RouterModule } from '@angular/router';
+import { RouterModule, Routes } from '@angular/router';
 import { errorRoute, navbarRoute } from './layouts';
 import { DEBUG_INFO_ENABLED } from 'app/app.constants';
 
-const LAYOUT_ROUTES = [navbarRoute, ...errorRoute];
+const ROUTES: Routes = [
+    {
+        path: 'admin',
+        loadChildren: './admin/admin.module#HrDataAdminModule'
+    },
+    navbarRoute,
+    ...errorRoute
+];
 
 @NgModule({
-    imports: [
-        RouterModule.forRoot(
-            [
-                {
-                    path: 'admin',
-                    loadChildren: './admin/admin.module#HrDataAdminModule'
-                },
-                ...LAYOUT_ROUTES
-            ],
-            { useHash: true, enableTracing: DEBUG_INFO_ENABLED }
-        )
-    ],
+    imports: [RouterModule.forRoot(ROUTES, { useHash: true, enableTracing: DEBUG_INFO_ENABLED })],
     exports: [RouterModule]
 })
 export class HrDataAppRoutingModule {}

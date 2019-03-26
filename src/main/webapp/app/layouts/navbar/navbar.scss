@@ -20,7 +20,7 @@ Navbar
     .dropdown-item.active,
     .dropdown-item.active:focus,
     .dropdown-item.active:hover {
-        background-color: $dark;
+        background-color: $white;
     }
 
     ul.navbar-nav {
@@ -35,7 +35,7 @@ Navbar
 
     .navbar-toggler {
         &:hover {
-            color: $navbar-dark-hover-color;
+            color: $navbar-light-hover-color;
         }
     }
 }
@@ -49,5 +49,30 @@ Logo styles
     display: inline-block;
     vertical-align: middle;
     background: url('../../../content/images/logo-jhipster.png') no-repeat center center;
+    background-size: contain;
+}
+.bell {
+    height: 28px;
+    width: 28px;
+    display: inline-block;
+    vertical-align: middle;
+    background: url('https://img.icons8.com/material-two-tone/28/000000/bell.png') no-repeat center center;
+    background-size: contain;
+}
+.cog {
+    height: 28px;
+    width: 28px;
+    display: inline-block;
+    vertical-align: middle;
+    background: url('https://img.icons8.com/color/28/000000/settings.png') no-repeat center center;
+    background-size: contain;
+}
+
+.user {
+    height: 28px;
+    width: 28px;
+    display: inline-block;
+    vertical-align: middle;
+    background: url('https://img.icons8.com/color/28/000000/name.png') no-repeat center center;
     background-size: contain;
 }

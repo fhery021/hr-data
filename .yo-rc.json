@@ -14,7 +14,7 @@
         "enableHibernateCache": true,
         "websocket": false,
         "databaseType": "sql",
-        "devDatabaseType": "mysql",
+        "devDatabaseType": "h2Memory",
         "prodDatabaseType": "mysql",
         "searchEngine": false,
         "messageBroker": false,
@@ -30,6 +30,8 @@
         "entitySuffix": "",
         "dtoSuffix": "DTO",
         "otherModules": [],
-        "enableTranslation": false
+        "enableTranslation": false,
+        "herokuAppName": "hr-data-solutions",
+        "herokuDeployType": "git"
     }
 }

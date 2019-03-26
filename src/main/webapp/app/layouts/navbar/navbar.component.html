@@ -1,7 +1,21 @@
-<nav class="navbar navbar-dark navbar-expand-md bg-dark">
+<nav class="navbar navbar-light navbar-expand-md">
+    <div class="container-fluid">
+        <div class="navbar-header">
+            <a class="navbar-brand hr_img" href="#">
+                <img src="/content/images/1.png">
+            </a>
+        </div>
+
+    </div>
+
     <a class="navbar-brand logo" routerLink="/" (click)="collapseNavbar()">
-        <span class="logo-img"></span>
-        <span class="navbar-title">HRData</span> <span class="navbar-version">{{version}}</span>
+        <span class="bell"></span>
+        <span class="cog"></span>
+        <div *ngIf="user">
+            <span class="user"></span>{{user}}
+        </div>
+        <span class="user"></span>Joska
+
     </a>
     <a class="navbar-toggler d-lg-none" href="javascript:void(0);" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation" (click)="toggleNavbar()">
         <fa-icon icon="bars"></fa-icon>
