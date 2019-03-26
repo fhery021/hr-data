@@ -20,6 +20,11 @@ import { HrDataEntityModule } from './entities/entity.module';
 import * as moment from 'moment';
 // jhipster-needle-angular-add-module-import JHipster will add new module here
 import { JhiMainComponent, NavbarComponent, FooterComponent, PageRibbonComponent, ErrorComponent } from './layouts';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { CustomMaterialModule } from 'app/core/material/material.module';
+import { MainNavComponent } from './main-nav/main-nav.component';
+import { LayoutModule } from '@angular/cdk/layout';
+import { MatToolbarModule, MatButtonModule, MatSidenavModule, MatIconModule, MatListModule } from '@angular/material';
 
 @NgModule({
     imports: [
@@ -36,9 +41,17 @@ import { JhiMainComponent, NavbarComponent, FooterComponent, PageRibbonComponent
         HrDataAccountModule,
         // jhipster-needle-angular-add-module JHipster will add new module here
         HrDataEntityModule,
-        HrDataAppRoutingModule
+        HrDataAppRoutingModule,
+        BrowserAnimationsModule,
+        CustomMaterialModule,
+        LayoutModule,
+        MatToolbarModule,
+        MatButtonModule,
+        MatSidenavModule,
+        MatIconModule,
+        MatListModule
     ],
-    declarations: [JhiMainComponent, NavbarComponent, ErrorComponent, PageRibbonComponent, FooterComponent],
+    declarations: [JhiMainComponent, NavbarComponent, ErrorComponent, PageRibbonComponent, FooterComponent, MainNavComponent],
     providers: [
         {
             provide: HTTP_INTERCEPTORS,

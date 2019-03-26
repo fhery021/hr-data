@@ -1,12 +1,6 @@
 <nav class="navbar navbar-light navbar-expand-md">
-    <div class="container-fluid">
-        <div class="navbar-header">
-            <a class="navbar-brand hr_img" href="#">
-                <img src="/content/images/1.png">
-            </a>
-        </div>
 
-    </div>
+    <span class="spacer"></span>
 
     <a class="navbar-brand logo" routerLink="/" (click)="collapseNavbar()">
         <span class="bell"></span>
@@ -14,7 +8,7 @@
         <div *ngIf="user">
             <span class="user"></span>{{user}}
         </div>
-        <span class="user"></span>Joska
+        <span class="user"></span>TODO Username
 
     </a>
     <a class="navbar-toggler d-lg-none" href="javascript:void(0);" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation" (click)="toggleNavbar()">
