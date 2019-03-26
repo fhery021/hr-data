@@ -14,7 +14,7 @@
         "enableHibernateCache": true,
         "websocket": false,
         "databaseType": "sql",
-        "devDatabaseType": "h2Memory",
+        "devDatabaseType": "mysql",
         "prodDatabaseType": "mysql",
         "searchEngine": false,
         "messageBroker": false,
